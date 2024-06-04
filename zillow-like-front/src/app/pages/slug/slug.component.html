@@ -1,0 +1,29 @@
+<div class="property">
+    <div class="property-image-container">
+        @for(image of property.images; track image.fileName){
+            <app-image-card [image]="image" [size]="{width: 2000, height: 550}"/>
+        }
+    </div>
+    <div class="property-info-container">
+        <h1>{{property.name}}</h1>
+        <h2><span>{{property.beds}}Beds</span> <span> ${{property.rentalPrice}}</span></h2>
+        <br>
+        <h2>Overview</h2>
+        <p>{{property.description}}</p>
+        <br>
+        <h2>Amenities:</h2>
+        <ul>
+            @if(property.parking){<li>Private Parking</li>}
+            @if(property.pool){<li>Pool</li>}
+            @if(property.petFriendly){<li>Pet Friendly</li>}
+            @if(property.inUnitDryer){<li>In Unit Dryer</li>}
+            @if(property.elevator){<li>Elevator</li>}          
+        </ul>
+        <br>
+        <h3>Licenced Brokerage</h3>
+        <p>Managing Broker: {{property.managingBroker?.name}}</p>
+        <p>Phone Number: {{property.managingBroker?.phoneNumber}}</p>
+        <br>
+        <a class="button" href="/">Go back</a>
+    </div>
+</div>

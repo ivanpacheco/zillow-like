@@ -1,1 +1,10 @@
-<p>card works!</p>
+<a [href]="'/property/'+property.slug">
+    <div class="card">
+        <app-image-card [image]="property.images[0]" [size]="{width: 300, height: 150}"/>
+        <div class="text-container">
+            <h3>${{property.rentalPrice}} /moth</h3>
+            <h3>{{property.beds}} Beds</h3>
+            <p>{{property.name}}</p>
+        </div>
+    </div>
+</a>

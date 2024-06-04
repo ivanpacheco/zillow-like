@@ -1,0 +1,22 @@
+<div class="article-container">
+    <article>
+        <app-map [locations]="locations" />
+    </article>
+    <article class="listings">
+        <h2>Rental Listings</h2>
+        <div class="card-container">
+            @if(propertiesResult.length > 0 ){
+                @for (property of propertiesResult; track property.id){
+                    <app-card [property]="property" />
+                }
+
+            }@else {
+
+                @for (property of properties; track property.id){
+        
+                    <app-card [property]="property" />
+                }            
+            }
+        </div>
+    </article>
+</div>

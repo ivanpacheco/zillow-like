@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Image } from '../../models/property';
 
 @Component({
   selector: 'app-image-card',
@@ -8,5 +9,9 @@ import { Component } from '@angular/core';
   styleUrl: './image-card.component.css'
 })
 export class ImageCardComponent {
+
+  @Input() image!: Image
+  @Input() size:any
+
 
 }

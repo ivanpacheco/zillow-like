@@ -1,1 +1,7 @@
-<p>map works!</p>
+<google-map >
+    @if(markers){
+        @for(marker of markers; track marker){
+            <map-marker [position]="marker.position"  [icon]="marker.icon"/>
+        }
+    }
+</google-map>
